@@ -1,5 +1,6 @@
 // Stateful para componentes com alterações de estados
 import 'package:flutter/material.dart';
+import 'package:ola_mundo/app_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,23 +11,19 @@ class HomePage extends StatefulWidget {
 
 class HomePageStage extends State<HomePage> {
   int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Contador Sergião'),
       ),
-      body: Container(
-        height: 200,
-        width: 200,
-        color: Colors.black,
-        child: Align(
-          alignment: Alignment.center,
-          child: Container(
-            height: 100,
-            width: 100,
-            color: Colors.green,
-          ),
+      body: Center(
+        child: Switch(
+          value: AppController.instance.isDartTheme,
+          onChanged: (value) {
+            AppController.instance.changeTheme();
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
