@@ -16,18 +16,19 @@ class HomePageStage extends State<HomePage> {
       appBar: AppBar(
         title: Text('Contador Sergião'),
       ),
-      body: Center(
-          child: GestureDetector(
-        child: Text(
-          "Clique para incrementar: $counter",
-          style: TextStyle(fontSize: 20.0),
+      body: Container(
+        height: 200,
+        width: 200,
+        color: Colors.black,
+        child: Align(
+          alignment: Alignment.center,
+          child: Container(
+            height: 100,
+            width: 100,
+            color: Colors.green,
+          ),
         ),
-        onTap: () {
-          setState(() {
-            counter++;
-          });
-        },
-      )),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.plus_one_rounded),
         onPressed: () {
